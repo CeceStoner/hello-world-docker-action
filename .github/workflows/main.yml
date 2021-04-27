@@ -37,9 +37,11 @@ jobs:
       run: |
         ls -R
         
+    #docker run --rm -t test:latest
+        
     - name: running the docker file!
       run: |
-        docker run --rm -t test:latest
+        docker run mcr.microsoft.com/windows/servercore:ltsc2019
         
 #     - uses: '${{ github.workspace }}/action.yml'
 #       with:
