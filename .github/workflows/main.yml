@@ -42,4 +42,5 @@ jobs:
 #       with:
 #         who-to-greet: 'Mona the Octocat'
 
-    - run: docker images
+    - run: |
+        docker images
