@@ -41,7 +41,7 @@ jobs:
         
     - name: running the docker file!
       run: |
-        docker run mcr.microsoft.com/windows/servercore:ltsc2019
+        docker run hello-world:linux
         
 #     - uses: '${{ github.workspace }}/action.yml'
 #       with:
