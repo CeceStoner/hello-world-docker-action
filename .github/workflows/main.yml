@@ -16,16 +16,16 @@ jobs:
       uses: actions/checkout@v2
     
     - uses: 1arp/create-a-file-action@0.2
-        with:
-          path: 'src'
-          file: 'foo.bar'
-          content: |
-            # Container image that runs your code
-            FROM mcr.microsoft.com/windows/servercore:ltsc2019
-            # Copies your code file from your action repository to the filesystem path `/` of the container
-            COPY entrypoint.sh /entrypoint.sh
-            # Code file to execute when the docker container starts up (`entrypoint.sh`)
-            ENTRYPOINT ["/entrypoint.sh"]
+      with:
+        path: 'src'
+        file: 'foo.bar'
+        content: |
+          # Container image that runs your code
+          FROM mcr.microsoft.com/windows/servercore:ltsc2019
+          # Copies your code file from your action repository to the filesystem path `/` of the container
+          COPY entrypoint.sh /entrypoint.sh
+          # Code file to execute when the docker container starts up (`entrypoint.sh`)
+          ENTRYPOINT ["/entrypoint.sh"]
           
     - name: executing a docker command from the command line!
       run: |
