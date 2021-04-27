@@ -41,3 +41,5 @@ jobs:
 #     - uses: '${{ github.workspace }}/action.yml'
 #       with:
 #         who-to-greet: 'Mona the Octocat'
+
+    - run: docker images
