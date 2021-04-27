@@ -35,6 +35,9 @@ jobs:
     - name: running the docker file!
       run: |
         docker run --rm -t test:latest
+    
+    - name: workspace structure
+      run: ls
         
 #     - uses: '${{ github.workspace }}/action.yml'
 #       with:
