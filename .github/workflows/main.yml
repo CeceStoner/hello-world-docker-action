@@ -29,8 +29,8 @@ jobs:
           
     - name: executing a docker command from the command line!
       run: |
-        echo ''
+        docker build - < Dockerfile
         
-    - uses: '${{ github.workspace }}/action.yml'
-      with:
-        who-to-greet: 'Mona the Octocat'
+#     - uses: '${{ github.workspace }}/action.yml'
+#       with:
+#         who-to-greet: 'Mona the Octocat'
