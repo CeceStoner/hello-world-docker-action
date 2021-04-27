@@ -29,7 +29,7 @@ jobs:
           
     - name: executing a docker command from the command line!
       run: |
-        docker build - < Dockerfile
+        docker build -f Dockerfile
         
 #     - uses: '${{ github.workspace }}/action.yml'
 #       with:
