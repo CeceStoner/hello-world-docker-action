@@ -30,15 +30,15 @@ jobs:
           
     - name: executing a docker command from the command line!
       run: |
-        docker build ${{ github.workspace }} -t test:latest 
+        docker build ${{ github.workspace }} -t test:latest
+        
+    - name: workspace structure
+      run: |
+        ls -R
         
     - name: running the docker file!
       run: |
         docker run --rm -t test:latest
-    
-    - name: workspace structure
-      run: |
-        ls -R
         
 #     - uses: '${{ github.workspace }}/action.yml'
 #       with:
