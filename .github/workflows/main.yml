@@ -31,6 +31,6 @@ jobs:
       run: |
         echo ''
         
-    - uses: ${{ github.workspace }}/action.yml
+    - uses: '${{ github.workspace }}/action.yml'
       with:
         who-to-greet: 'Mona the Octocat'
