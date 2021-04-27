@@ -17,7 +17,7 @@ jobs:
     
     - uses: 1arp/create-a-file-action@0.2
       with:
-        path: 'src'
+        #path: 'src'
         file: 'Dockerfile'
         content: |
           # Container image that runs your code
