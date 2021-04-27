@@ -23,13 +23,17 @@ jobs:
           # Container image that runs your code
           FROM mcr.microsoft.com/windows/servercore:ltsc2019
           # Copies your code file from your action repository to the filesystem path `/` of the container
-          COPY entrypoint.sh /entrypoint.sh
+          COPY entrypoint.ps1 /entrypoint.ps1
           # Code file to execute when the docker container starts up (`entrypoint.sh`)
-          ENTRYPOINT ["/entrypoint.sh"]
+          ENTRYPOINT ["/entrypoint.ps1"]
           
     - name: executing a docker command from the command line!
       run: |
-        docker build ${{ github.workspace }}
+        docker build ${{ github.workspace }} -t test:latest 
+        
+    - name: running the docker file!
+      run: |
+        docker run --rm -t test:latest
         
 #     - uses: '${{ github.workspace }}/action.yml'
 #       with:
