@@ -27,6 +27,10 @@ jobs:
           # Code file to execute when the docker container starts up (`entrypoint.sh`)
           ENTRYPOINT ["/entrypoint.sh"]
           
+    - name: Display structure of downloaded files
+      run: ls -R
+      working-directory: ${{github.workspace}}
+          
     - name: executing a docker command from the command line!
       run: |
         curl ${{ github.workspace }}/Dockerfile | docker build -f - .
