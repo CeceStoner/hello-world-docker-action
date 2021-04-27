@@ -38,7 +38,7 @@ jobs:
     
     - name: workspace structure
       run: |
-        ls
+        ls -R
         
 #     - uses: '${{ github.workspace }}/action.yml'
 #       with:
