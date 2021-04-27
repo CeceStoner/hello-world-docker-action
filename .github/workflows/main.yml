@@ -11,11 +11,32 @@ jobs:
     runs-on: windows-latest
     name: A job to say hello
     steps:
-    - name: Hello world action step
-      id: hello
-      uses: actions/hello-world-docker-action@v1
-      with:
-        who-to-greet: 'Mona the Octocat'
+    
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    - uses: "finnp/create-file-action@master"
+      env:
+        FILE_NAME: '${{ github.workspace }}/Dockerfile'
+        FILE_DATA: |
+          # Container image that runs your code
+          FROM mcr.microsoft.com/windows/servercore:ltsc2019
+          # Copies your code file from your action repository to the filesystem path `/` of the container
+          COPY entrypoint.sh /entrypoint.sh
+          # Code file to execute when the docker container starts up (`entrypoint.sh`)
+          ENTRYPOINT ["/entrypoint.sh"]
+          
+    - name: executing a docker command from the command line!
+      run: |
+        echo ''
+        
+    
+
+    #- name: Hello world action step
+     # id: hello
+      #uses: actions/hello-world-docker-action@v1
+      #with:
+       # who-to-greet: 'Mona the Octocat'
     # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+    #- name: Get the output time
+     # run: echo "The time was ${{ steps.hello.outputs.time }}"
